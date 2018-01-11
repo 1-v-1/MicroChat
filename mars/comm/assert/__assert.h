@@ -21,7 +21,7 @@
 #ifndef COMM_COMM_ASSERT_H_
 #define COMM_COMM_ASSERT_H_
 
-#include <sys/cdefs.h>
+#include <comm/windows/sys/cdefs.h>
 #include <stdarg.h>
 
 # if (!__ISO_C_VISIBLE >= 1999)

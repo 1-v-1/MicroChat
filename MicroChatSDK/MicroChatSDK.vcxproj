@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -22,32 +22,32 @@
     <ProjectGuid>{99D578EA-B912-492B-A354-5D06A4D93C3D}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>MicroChatSDK</RootNamespace>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -74,19 +74,21 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>D:\项目_个人研究\微信机器人\MicroChat\mars\openssl\include;D:\项目_个人研究\微信机器人\MicroChat\mars\openssl\include\openssl;D:\项目_个人研究\微信机器人\MicroChat\mars\comm\windows;D:\项目_个人研究\微信机器人\MicroChat\sqlite3;D:\项目_个人研究\微信机器人\MicroChat\mars\comm;D:\项目_个人研究\微信机器人\MicroChat;D:\项目_个人研究\微信机器人\MicroChat\mars;D:\项目_个人研究\微信机器人\MicroChat\MicroChatSDK\proto\protobuf;D:\项目_个人研究\微信机器人\MicroChat\MicroChatSDK;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
+    <IncludePath>..\mars\openssl\include\openssl;..\mars\openssl\include;..\sqlite3;..\mars\comm\windows;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>TurnOffAllWarnings</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;MICROCHATSDK_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;MICROCHATSDK_EXPORTS;_CRT_SECURE_NO_WARNINGS;_CRT_SUCURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>.\;..\;..\mars;..\mars\comm\;..\mars\comm\windows;..\mars\openssl\include;..\mars\openssl\include\openssl;.\proto\protobuf;..\sqlite3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -106,9 +108,9 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <PrecompiledHeader>Use</PrecompiledHeader>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>_DEBUG;_WINDOWS;_USRDLL;MICROCHATSDK_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_WINDOWS;_USRDLL;MICROCHATSDK_EXPORTS;_CRT_SECURE_NO_WARNINGS;_CRT_SUCURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
@@ -143,12 +145,13 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>NDEBUG;_WINDOWS;_USRDLL;MICROCHATSDK_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_WINDOWS;_USRDLL;MICROCHATSDK_EXPORTS;_CRT_SECURE_NO_WARNINGS;_CRT_SUCURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>false</SDLCheck>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)WTL;$(ProjectDir)../;$(ProjectDir)../mars;$(ProjectDir)../mars/comm/windows;$(ProjectDir)../mars/comm;$(ProjectDir)proto/protobuf</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -336,8 +339,12 @@
     <ClCompile Include="Business\ManualAuthCGITask.cpp" />
     <ClCompile Include="Business\NewInitCGITask.cpp" />
     <ClCompile Include="Business\NewSendMsgCGITask.cpp" />
-    <ClCompile Include="Business\NewSyncCGITask.cpp" />
-    <ClCompile Include="Business\ReportSyncKVCGITask.cpp" />
+    <ClCompile Include="Business\NewSyncCGITask.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Business\ReportSyncKVCGITask.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="Business\SearchContactCGITask.cpp" />
     <ClCompile Include="Business\VerifyUserCGITask.cpp" />
     <ClCompile Include="db\db.cpp" />
@@ -358,99 +365,273 @@
     </ClCompile>
     <ClCompile Include="interface.cpp" />
     <ClCompile Include="MicroChatSDK.cpp" />
-    <ClCompile Include="proto\generate\bindopmobileforreg.pb.cc" />
-    <ClCompile Include="proto\generate\manualauth.pb.cc" />
-    <ClCompile Include="proto\generate\NewInit.pb.cc" />
-    <ClCompile Include="proto\generate\NewSendMsg.pb.cc" />
-    <ClCompile Include="proto\generate\newsync.pb.cc" />
-    <ClCompile Include="proto\generate\searchcontact.pb.cc" />
-    <ClCompile Include="proto\generate\VerifyUser.pb.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\any.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\any.pb.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\api.pb.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\arena.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\arenastring.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\descriptor.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\descriptor.pb.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\descriptor_database.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\duration.pb.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\dynamic_message.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\empty.pb.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\extension_set.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\extension_set_heavy.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\field_mask.pb.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\generated_message_reflection.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\generated_message_table_driven.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\generated_message_util.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\io\coded_stream.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\io\gzip_stream.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\io\printer.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\io\strtod.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\io\tokenizer.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\io\zero_copy_stream.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\io\zero_copy_stream_impl.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\io\zero_copy_stream_impl_lite.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\map_field.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\message.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\message_lite.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\reflection_ops.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\repeated_field.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\service.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\source_context.pb.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\struct.pb.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\stubs\atomicops_internals_x86_gcc.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\stubs\atomicops_internals_x86_msvc.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\stubs\bytestream.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\stubs\common.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\stubs\int128.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\stubs\mathlimits.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\stubs\once.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\stubs\status.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\stubs\statusor.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\stubs\stringpiece.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\stubs\stringprintf.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\stubs\structurally_valid.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\stubs\strutil.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\stubs\substitute.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\stubs\time.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\text_format.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\timestamp.pb.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\type.pb.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\unknown_field_set.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\util\delimited_message_util.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\util\field_comparator.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\util\field_mask_util.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\util\internal\datapiece.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\util\internal\default_value_objectwriter.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\util\internal\error_listener.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\util\internal\field_mask_utility.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\util\internal\json_escaping.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\util\internal\json_objectwriter.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\util\internal\json_stream_parser.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\util\internal\object_writer.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\util\internal\protostream_objectsource.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\util\internal\protostream_objectwriter.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\util\internal\proto_writer.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\util\internal\type_info.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\util\internal\utility.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\util\json_util.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\util\message_differencer.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\util\time_util.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\util\type_resolver_util.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\wire_format.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\wire_format_lite.cc" />
-    <ClCompile Include="proto\protobuf\google\protobuf\wrappers.pb.cc" />
-    <ClCompile Include="PublicComponentV2\app_callback.cpp" />
-    <ClCompile Include="PublicComponentV2\longlink_packer.cc" />
-    <ClCompile Include="PublicComponentV2\shortlink_packer.cc" />
-    <ClCompile Include="PublicComponentV2\stn_callback.cpp" />
+    <ClCompile Include="proto\generate\bindopmobileforreg.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\generate\manualauth.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\generate\NewInit.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\generate\NewSendMsg.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\generate\newsync.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\generate\searchcontact.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\generate\VerifyUser.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\any.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\any.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\api.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\arena.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\arenastring.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\descriptor.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\descriptor.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\descriptor_database.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\duration.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\dynamic_message.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\empty.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\extension_set.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\extension_set_heavy.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\field_mask.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\generated_message_reflection.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\generated_message_table_driven.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\generated_message_util.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\io\coded_stream.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\io\gzip_stream.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\io\printer.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\io\strtod.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\io\tokenizer.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\io\zero_copy_stream.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\io\zero_copy_stream_impl.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\io\zero_copy_stream_impl_lite.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\map_field.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\message.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\message_lite.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\reflection_ops.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\repeated_field.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\service.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\source_context.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\struct.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\stubs\atomicops_internals_x86_gcc.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\stubs\atomicops_internals_x86_msvc.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\stubs\bytestream.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\stubs\common.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\stubs\int128.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\stubs\mathlimits.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\stubs\once.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\stubs\status.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\stubs\statusor.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\stubs\stringpiece.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\stubs\stringprintf.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\stubs\structurally_valid.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\stubs\strutil.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\stubs\substitute.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\stubs\time.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\text_format.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\timestamp.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\type.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\unknown_field_set.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\util\delimited_message_util.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\util\field_comparator.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\util\field_mask_util.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\util\internal\datapiece.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\util\internal\default_value_objectwriter.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\util\internal\error_listener.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\util\internal\field_mask_utility.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\util\internal\json_escaping.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\util\internal\json_objectwriter.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\util\internal\json_stream_parser.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\util\internal\object_writer.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\util\internal\protostream_objectsource.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\util\internal\protostream_objectwriter.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\util\internal\proto_writer.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\util\internal\type_info.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\util\internal\utility.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\util\json_util.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\util\message_differencer.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\util\time_util.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\util\type_resolver_util.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\wire_format.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\wire_format_lite.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="proto\protobuf\google\protobuf\wrappers.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="PublicComponentV2\app_callback.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="PublicComponentV2\longlink_packer.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="PublicComponentV2\shortlink_packer.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="PublicComponentV2\stn_callback.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="Wrapper\NetworkService.cpp" />
+    <ClCompile Include="Wrapper\NetworkService.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="MicroChatSDK.def" />

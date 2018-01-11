@@ -9,6 +9,7 @@
 #include "../generate/NewInit.pb.h"
 #include "interface.h"
 
+//#include "stdafx.h"
 
 bool NewSyncCGITask::s_bSyncing		= FALSE;
 bool NewSyncCGITask::s_bNeedReSync	= FALSE;

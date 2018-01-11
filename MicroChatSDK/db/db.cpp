@@ -95,8 +95,14 @@ void CMicroChatDB::UpdateSyncKey(string strSyncKey)
 	strSql.Format(L"delete from synckey;");
 	ExecSQL(CW2UTF8(strSql), NULL, NULL);
 
+
 	//²åÈë¼ÇÂ¼
-	strSql.Format(L"insert into synckey(key) values('%s');", CA2W(strSyncKey.c_str()));
+	/*
+	strSql.Format(L"insert into synckey(key) values('%s');", CA2W(strSyncKey.c_str())); // old
+
+	fixed by:feryice
+	*/
+	strSql.Format(L"insert into synckey(key) values('%s');", CA2W(strSyncKey.c_str()).m_psz); // change 
 	ExecSQL(CW2UTF8(strSql), NULL, NULL);
 }
 

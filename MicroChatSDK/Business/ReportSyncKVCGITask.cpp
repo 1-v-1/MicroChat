@@ -5,6 +5,8 @@
 #include <mars/comm/windows/projdef.h>
 #include "proto/generate/newsync.pb.h"
 
+//#include "stdafx.h"
+
 bool ReportSyncKVCGITask::Req2Buf(uint32_t _taskid, void* const _user_context, AutoBuffer& _outbuffer, AutoBuffer& _extend, int& _error_code, const int _channel_select)
 {
 	string strSyncKey = pAuthInfo->GetSyncKey();

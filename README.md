@@ -1,3 +1,36 @@
+# MicroChat 微信安卓通信协议学习
+
+技术是无罪的，快乐就在思考， 本代码和文章仅供参考微信通讯模型学习交流， 请勿用于商业用途及违法行为，否则后果自负！！！
+
+
+已修复原贴无法编译和编译出错问题  一键直接编译， release里有编译好的项目
+
+目前功能不是很完善，感谢原作者提供思路
+
+编译说明 和 微信协议分析：https://www.icefox.org/  (参考了很多文章)
+
+
+> 需要增加的目录
+
+```
+..\mars\openssl\include
+..\mars\openssl\include\openssl
+..\mars\comm\windows
+..\MicroChat\sqlite3
+..\MicroChat\mars\comm
+..\MicroChat
+..\mars
+proto\protobuf
+.\
+```
+
+
+本人能力有限，欢迎交流学习探讨！
+
+
+
+> 原作者的话
+
 # MicroChat
 just for learning Duilib!
 

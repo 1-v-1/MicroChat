@@ -102,9 +102,6 @@
     <ClInclude Include="PublicComponentV2\shortlink_packer.h">
       <Filter>PublicComponentV2</Filter>
     </ClInclude>
-    <ClInclude Include="PublicComponentV2\stn_callback.h">
-      <Filter>PublicComponentV2</Filter>
-    </ClInclude>
     <ClInclude Include="PublicComponentV2\stnproto_logic.h">
       <Filter>PublicComponentV2</Filter>
     </ClInclude>
@@ -552,6 +549,9 @@
     <ClInclude Include="Business\bindCGITask.h">
       <Filter>Business</Filter>
     </ClInclude>
+    <ClInclude Include="PublicComponentV2\stn_callback.h">
+      <Filter>PublicComponentV2</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -588,9 +588,6 @@
       <Filter>PublicComponentV2</Filter>
     </ClCompile>
     <ClCompile Include="PublicComponentV2\shortlink_packer.cc">
-      <Filter>PublicComponentV2</Filter>
-    </ClCompile>
-    <ClCompile Include="PublicComponentV2\stn_callback.cpp">
       <Filter>PublicComponentV2</Filter>
     </ClCompile>
     <ClCompile Include="proto\generate\manualauth.pb.cc">
@@ -871,6 +868,9 @@
     </ClCompile>
     <ClCompile Include="Business\bindCGITask.cpp">
       <Filter>Business</Filter>
+    </ClCompile>
+    <ClCompile Include="PublicComponentV2\stn_callback.cpp">
+      <Filter>PublicComponentV2</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

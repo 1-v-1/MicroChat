@@ -32,7 +32,7 @@ LRESULT CFriendWnd::OnSearchContact(UINT uMsg, WPARAM wParam, LPARAM lParam, BOO
 			//ÏÂÔØÍ·Ïñ
 			CDuiString strUrl = CA2W(res->szHeadIcon);
 			CDuiString strFileName;
-			strFileName.Format(L".\\skin\\head\\%s.png", CA2W(res->szV1_Name));
+			strFileName.Format(L".\\skin\\head\\%s.png", CA2W(res->szV1_Name).m_psz );//fixed .m_psz
 			CreateDirectory(L".\\skin\\head", NULL);
 
 			HRESULT hr = URLDownloadToFile(0, strUrl, strFileName, 0, NULL);
@@ -42,7 +42,7 @@ LRESULT CFriendWnd::OnSearchContact(UINT uMsg, WPARAM wParam, LPARAM lParam, BOO
 				if (pLabel)
 				{
 					CDuiString strFileName;
-					strFileName.Format(L"head/%s.png", CA2W(res->szV1_Name));
+					strFileName.Format(L"head/%s.png", CA2W(res->szV1_Name).m_psz);  //fixed .m_psz
 					pLabel->SetBkImage(strFileName);
 				}
 			}

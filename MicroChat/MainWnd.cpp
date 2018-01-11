@@ -228,7 +228,7 @@ LRESULT CMainWnd::HandleCustomMessage(UINT uMsg, WPARAM wParam, LPARAM lParam, B
 					//下载好友列表头像
 					CDuiString strUrl = CA2W(pInfo->headicon);
 					CDuiString strFileName;
-					strFileName.Format(L".\\skin\\head\\%s.png", CA2W(pInfo->wxid));
+					strFileName.Format(L".\\skin\\head\\%s.png", CA2W(pInfo->wxid).m_psz );//fixed .m_psz
 					CreateDirectory(L".\\skin\\head", NULL);
 
 					HRESULT hr = URLDownloadToFile(0, strUrl, strFileName, 0, NULL);
@@ -238,7 +238,7 @@ LRESULT CMainWnd::HandleCustomMessage(UINT uMsg, WPARAM wParam, LPARAM lParam, B
 						if (pLabel)
 						{
 							CDuiString strFileName;
-							strFileName.Format(L"head/%s.png", CA2W(pInfo->wxid));
+							strFileName.Format(L"head/%s.png", CA2W(pInfo->wxid).m_psz );//fixed .m_psz
 							pLabel->SetBkImage(strFileName);
 						}
 					}

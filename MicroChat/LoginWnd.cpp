@@ -36,13 +36,29 @@ LRESULT CLoginWnd::ScanQrcode(UINT uMsg, LoginResult *res, int error_code, BOOL&
 	{
 		strcpy(res->szMsg, "未知错误");
 	}
-	ShowLoginResult("错误码:%d,失败原因:%s", error_code, res->szMsg);
 
+	/*  old code
+	ShowLoginResult("错误码:%d,失败原因:%s", error_code, res->szMsg);
 	//弹出页面
 	ShellExecute(NULL, L"open", L"iexplore.exe", CA2W(res->szUrl), NULL, SW_SHOWNORMAL);
-
 	//卡住主界面,等待用户扫码成功后重新登录
 	MessageBox(GetHWND(), L"扫码授权成功后请重新登录", L"扫码授权", NULL);
+	*/
+
+
+
+	try {
+		//弹出页面
+		ShellExecute(NULL, L"open", L"iexplore.exe", CA2W(res->szUrl).m_psz, NULL, SW_SHOWNORMAL);
+		//卡住主界面,等待用户扫码成功后重新登录
+		MessageBox(GetHWND(), L"扫码授权成功后请重新登录", L"扫码授权", NULL);
+
+	}
+	catch(exception e){
+		ShowLoginResult("错误码:%d,失败原因:%s", error_code, res->szMsg);
+	}
+	
+
 
 	SAFE_DELETE(res);
 
@@ -190,7 +206,7 @@ LRESULT CLoginWnd::HandleCustomMessage(UINT uMsg, WPARAM wParam, LPARAM lParam, 
 			LoginResult *res = (LoginResult *)wParam;
 
 			CString str;
-			str.Format(L"错误码:%d,登录失败原因:%s", lParam, CA2W(res->szMsg));
+			str.Format(L"错误码:%d,登录失败原因:%s", lParam, CA2W(res->szMsg).m_psz );//fixed .m_psz
 			CLabelUI *pLabel = (CLabelUI *)m_PaintManager.FindControl(L"loginMsg");
 			if (pLabel)
 			{

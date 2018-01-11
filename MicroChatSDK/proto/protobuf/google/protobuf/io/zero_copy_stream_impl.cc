@@ -49,6 +49,11 @@
 #include <google/protobuf/stubs/logging.h>
 #include <google/protobuf/stubs/stl_util.h>
 
+//关闭 POSIX标准名冲突警告  close  read  write  或 关闭SDL检查(vs2012 and last)
+//fixed:feryice
+//#define _CRT_SECURE_NO_DEPRECATE 1
+//#define _CRT_NONSTDC_NO_DEPRECATE 1
+
 
 namespace google {
 namespace protobuf {

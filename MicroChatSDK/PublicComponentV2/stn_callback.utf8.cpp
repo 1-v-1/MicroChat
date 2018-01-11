@@ -27,15 +27,16 @@
 namespace mars {
     namespace stn {
         
-		//using mars::stn::StnCallBack;
-		StnCallBack* StnCallBack::instance_ = NULL;   
+		StnCallBack* StnCallBack::instance_ = NULL;
+        
 		StnCallBack* StnCallBack::Instance() {
 			if(instance_ == NULL) {
-					instance_ = new StnCallBack();
+				instance_ = new StnCallBack();
 			}
+    
 			return instance_;
 		}
-
+        
 		void StnCallBack::Release() {
 			delete instance_;
 			instance_ = NULL;
@@ -44,6 +45,7 @@ namespace mars {
 		bool StnCallBack::MakesureAuthed() {
 			return true;
 		}
+
 
 		void StnCallBack::TrafficData(ssize_t _send, ssize_t _recv) {
 			xdebug2(TSF"send:%_, recv:%_", _send, _recv);
@@ -76,20 +78,20 @@ namespace mars {
 		}
 
 		void StnCallBack::ReportConnectStatus(int _status, int longlink_status) {
-
+    
 			switch (longlink_status) {
-				case kServerFailed:
-				case kServerDown:
-				case kGateWayFailed:
+				case mars::stn::kServerFailed:
+				case mars::stn::kServerDown:
+				case mars::stn::kGateWayFailed:
 					break;
-				case kConnecting:
+				case mars::stn::kConnecting:
 					break;
-				case kConnected:
+				case mars::stn::kConnected:
 					break;
-				case kNetworkUnkown:
-					return ;
+				case mars::stn::kNetworkUnkown:
+					return;
 				default:
-					return ;
+					return;
 			}
     
 		}
@@ -97,10 +99,8 @@ namespace mars {
 		// synccheck：长链成功后由网络组件触发
 		// 需要组件组包，发送一个req过去，网络成功会有resp，但没有taskend，处理事务时要注意网络时序
 		// 不需组件组包，使用长链做一个sync，不用重试
-
 		int  StnCallBack::GetLonglinkIdentifyCheckBuffer(AutoBuffer& _identify_buffer, AutoBuffer& _buffer_hash, int32_t& _cmdid) {
     
-
 			return pNetworkService.GetLonglinkIdentifyCheckBuffer(_identify_buffer, _buffer_hash, _cmdid);
 		}
 
@@ -112,7 +112,7 @@ namespace mars {
 		void StnCallBack::RequestSync() {
 			pNetworkService.RequestSync();
 		}
-	}
+    }
 }
 
 

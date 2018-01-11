@@ -1,3 +1,5 @@
+#include "stdafx.h"
+
 #include "mmCryptInterface.h"
 #include "mars/comm/windows/zlib/zlib.h"
 #include "aes.h"
