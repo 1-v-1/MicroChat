@@ -7,6 +7,7 @@
 
 已修复原贴无法编译和编译出错问题  一键直接编译， release里有编译好的项目
 
+
 目前功能不是很完善，感谢原作者提供思路!    希望微信官方能够提供可二次开放的小程序/AppSDK接口！
 
 本人能力有限，欢迎交流学习探讨！  如果产生侵权请联系我， 我会立即删除相关内容 ！
@@ -15,20 +16,23 @@
 
 > 参考
 
+```
+
 编译说明和微信协议分析：https://www.icefox.org/  (参考了很多文章)
 
 微信旧版本逆向的源代码： https://github.com/h4dex/WeChatRE
 
-<<<<<<< HEAD
-腾讯微信MARS跨平台socket通信组件  https://github.com/Tencent/mars/   文档：https://github.com/Tencent/mars/#mars_cn
+腾讯微信MARS跨平台socket通信组件  https://github.com/Tencent/mars/   
+
+文档：https://github.com/Tencent/mars/#mars_cn
 
 SDK编译故障参考这里：https://github.com/Tencent/mars/tree/master/samples/Windows/
-=======
+
 腾讯微信MARS跨平台socket通信组件  https://github.com/Tencent/Mars/simples
->>>>>>> e63716ffdb396e362814f257f7b0b6dc09170ef9
 
+```
 
->工具
+> 工具
 ```
 Visual Studio 2015 及以上版本 (安装ATL及BOOST)
 Wireshark
@@ -44,7 +48,7 @@ TCP dump
 ```
 
 
-> 
+> 编译
 
 ```
 需要设置 VC++目录
