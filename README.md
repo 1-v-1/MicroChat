@@ -17,7 +17,7 @@
 
 微信旧版本逆向的源代码： https://github.com/h4dex/WeChatRE
 
-腾讯微信MARS跨平台socket通信组件  https://github.com/Tencent/Mars/simple
+腾讯微信MARS跨平台socket通信组件  https://github.com/Tencent/Mars/simples
 
 
 >工具
